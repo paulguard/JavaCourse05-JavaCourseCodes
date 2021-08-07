@@ -1,0 +1,28 @@
+JVM的重要参数：
+-server
+-Xms4800m
+-Xmx4800m
+-Xss1024k
+-XX:PermSize=256m
+-XX:MaxPermSize=256m
+
+最大和最小堆内存都配置了4800m，也就是约4.6G
+这里因为用了jdk8了，所以PermSize应该已经失效了
+可以修改为：
+-XX:MetaspaceSize=256m;-XX:MaxMetaspaceSize=256m;
+
+最终用jinfo看到的部分信息：
+VM Flags:
+Non-default VM flags:
+-XX:CICompilerCount=2             // 意义不明
+-XX:InitialHeapSize=5033164800    // 初始堆大小也是4.5G，初始和最大堆大小一样，所以堆内存大小不需要自适应增加或者减少
+-XX:MaxHeapSize=5033164800        // 堆（年轻代 + 老年代）最大约4.5，结合后面的年轻代1.5G，老年代3G，堆内存分代大小基本固定
+-XX:MaxNewSize=1677721600         // 年轻代最大1.5G
+-XX:MinHeapDeltaBytes=524288      // 表示当JVM决定是否要做或者尝试扩容的时候最小扩/缩多少，这里是默认值：512K
+-XX:NewSize=1677721600            // 年轻代初始也是1.5G，所以年轻代尺寸固定
+-XX:OldSize=3355443200            // 老年代约3G
+-XX:ThreadStackSize=1024          // 线程栈大小，就是-Xss1024k设置的结果
+-XX:+UseCompressedClassPointers   // 使用了压缩指针
+-XX:+UseCompressedOops            // 使用了压缩指针
+-XX:+UseFastUnorderedTimeStamps   // 意义不明
+-XX:+UseParallelGC                // 使用jdk8默认的垃圾回收器：年轻代用ParaNew，老年代用ParaOld
