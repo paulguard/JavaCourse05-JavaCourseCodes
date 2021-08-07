@@ -1,0 +1,50 @@
+Attaching to process ID 44572, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.72-b15
+
+using thread-local object allocation.
+Garbage-First (G1) GC with 6 thread(s)   // G1垃圾回收期的垃圾回收线程数为6
+
+Heap Configuration:
+   MinHeapFreeRatio         = 40     //堆内存至少保证40%空间可用
+   MaxHeapFreeRatio         = 70     //堆内存至多保证70%空间可用
+   MaxHeapSize              = 1073741824 (1024.0MB)   //最大堆内存1G
+   NewSize                  = 1363144 (1.2999954223632812MB)
+   MaxNewSize               = 643825664 (614.0MB)  //最大年轻代614MB（即：1G x 60%）
+   OldSize                  = 5452592 (5.1999969482421875MB)   //老年代仅5M
+   NewRatio                 = 2                                //在G1里应该没用了
+   SurvivorRatio            = 8                                //在G1里应该没用了
+   MetaspaceSize            = 21807104 (20.796875MB)
+   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+   MaxMetaspaceSize         = 17592186044415 MB
+   G1HeapRegionSize         = 1048576 (1.0MB) //每个Region的大小是1M
+
+Heap Usage:
+G1 Heap:
+   regions  = 1024                                //JVM堆总共的region数为1024
+   capacity = 1073741824 (1024.0MB)               //堆最大1G
+   used     = 520412152 (496.30370330810547MB)    //已使用496M
+   free     = 553329672 (527.6962966918945MB)     //空闲527M
+   48.467158526182175% used                       //使用率48%
+G1 Young Generation:
+Eden Space:
+   regions  = 293                               //年轻代293个region
+   capacity = 635437056 (606.0MB)               //年轻代容量606M
+   used     = 307232768 (293.0MB)               //年轻代已使用293M
+   free     = 328204288 (313.0MB)               //年轻代未使用313M
+   48.34983498349835% used
+Survivor Space:
+   regions  = 39                                //survivor的region数量为39
+   capacity = 40894464 (39.0MB)                 //容量为39M
+   used     = 40894464 (39.0MB)                 //使用39M
+   free     = 0 (0.0MB)                         //空闲为0M（全占用上了）
+   100.0% used
+G1 Old Generation:
+   regions  = 165                               //老年代的region数量为165个
+   capacity = 397410304 (379.0MB)               //老年代的容量为379M
+   used     = 172284920 (164.30370330810547MB)  //已使用164M
+   free     = 225125384 (214.69629669189453MB)  //剩余约214M可用
+   43.351900608998804% used
+
+55453 interned Strings occupying 5902096 bytes.
