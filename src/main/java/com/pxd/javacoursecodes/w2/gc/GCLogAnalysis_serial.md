@@ -37,3 +37,23 @@ Heap
 第十二次回收，年轻代 307M -> 34M (又回到第一次了), 堆占用 720M -> 521M, 老年代占用487M，花费13ms
 ...
 第十五此回收，年轻代又满了，又需要进行majorGC，老年代：640M -> 381M ,堆占用 947M -> 381M，说明年轻代的对象都已经被回收或者晋升至老年代，花费 42ms
+
+
+
+==============================================================================================
+
+正在执行...
+[GC (Allocation Failure) [DefNew: 838912K->104831K(943744K), 0.0875249 secs] 838912K->209178K(3040896K), 0.0958887 secs] [Times: user=0.03 sys=0.06, real=0.10 secs]
+[GC (Allocation Failure) [DefNew: 943743K->104831K(943744K), 0.1066188 secs] 1048090K->357692K(3040896K), 0.1068907 secs] [Times: user=0.06 sys=0.03, real=0.11 secs]
+[GC (Allocation Failure) [DefNew: 943743K->104831K(943744K), 0.0735463 secs] 1196604K->494028K(3040896K), 0.0736533 secs] [Times: user=0.05 sys=0.03, real=0.07 secs]
+[GC (Allocation Failure) [DefNew: 943743K->104831K(943744K), 0.0759957 secs] 1332940K->645171K(3040896K), 0.0762445 secs] [Times: user=0.06 sys=0.01, real=0.08 secs]
+执行结束!共生成对象次数:12910
+Heap
+ def new generation   total 943744K, used 207284K [0x0000000700000000, 0x0000000740000000, 0x0000000740000000)
+  eden space 838912K,  12% used [0x0000000700000000, 0x000000070640d3f8, 0x0000000733340000)
+  from space 104832K,  99% used [0x0000000733340000, 0x000000073999fff0, 0x00000007399a0000)
+  to   space 104832K,   0% used [0x00000007399a0000, 0x00000007399a0000, 0x0000000740000000)
+ tenured generation   total 2097152K, used 540339K [0x0000000740000000, 0x00000007c0000000, 0x00000007c0000000)
+   the space 2097152K,  25% used [0x0000000740000000, 0x0000000760face70, 0x0000000760fad000, 0x00000007c0000000)
+ Metaspace       used 2719K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 297K, capacity 386K, committed 512K, reserved 1048576K

@@ -1,24 +1,24 @@
 SerialGC:
-Starting at 2021/8/12 7:41:52
+Starting at 2021/8/13 0:59:47
 [Press C to stop the test]
-452814  (RPS: 7135.9)
+501216  (RPS: 7907.9)
 ---------------Finished!----------------
-Finished at 2021/8/12 7:42:55 (took 00:01:03.5217890)
-Status 200:    452814
+Finished at 2021/8/13 1:00:51 (took 00:01:03.4571052)
+Status 200:    501238
 
-RPS: 7414.1 (requests/second)
-Max: 176ms
+RPS: 8206.6 (requests/second)
+Max: 141ms
 Min: 0ms
-Avg: 0.2ms
+Avg: 0.1ms
 
   50%   below 0ms
   60%   below 0ms
   70%   below 0ms
   80%   below 0ms
   90%   below 0ms
-  95%   below 1ms
-  98%   below 3ms
-  99%   below 4ms
+  95%   below 0ms
+  98%   below 2ms
+  99%   below 3ms
 99.9%   below 9ms
 
 ======================================================================================
