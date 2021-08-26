@@ -1,6 +1,7 @@
 package com.pxd.javacoursecodes.w2.httpclient;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
