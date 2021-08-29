@@ -11,9 +11,7 @@ public class ThreadWork8 {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Semaphore semaphore = new Semaphore(1);
-
-        semaphore.acquire();
+        Semaphore semaphore = new Semaphore(0);
 
         Thread t1 = new Thread(() -> {
             result = getResult();
@@ -21,8 +19,7 @@ public class ThreadWork8 {
         });
         t1.start();
 
-        while (semaphore.availablePermits() == 0) {
-        }
+        semaphore.acquire();
 
         System.out.println(result);
     }
