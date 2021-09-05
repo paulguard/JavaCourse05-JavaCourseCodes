@@ -4,6 +4,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--这里顺带把选做题3也给做了-->
+
     <!--class的两个类用xml来声明-->
     <bean id="classDao" class="com.pxd.javacoursecodes.w5.dao.ClassDaoImpl" />
     <bean id="classService" class="com.pxd.javacoursecodes.w5.service.ClassServiceImpl" />
