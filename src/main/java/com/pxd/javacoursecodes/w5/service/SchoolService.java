@@ -8,4 +8,5 @@ public interface SchoolService {
 
     List<School> selectAll();
 
+    String getSchoolName();
 }

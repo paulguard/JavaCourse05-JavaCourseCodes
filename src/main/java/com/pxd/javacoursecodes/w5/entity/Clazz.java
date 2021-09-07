@@ -3,7 +3,7 @@ package com.pxd.javacoursecodes.w5.entity;
 import lombok.Data;
 
 @Data
-public class Class {
+public class Clazz {
 
     private Long id;
 

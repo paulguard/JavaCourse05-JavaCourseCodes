@@ -1,23 +1,27 @@
 package com.pxd.javacoursecodes;
 
+import com.example.pxdstarter.service.DataService;
 import com.pxd.javacoursecodes.w5.entity.School;
 import com.pxd.javacoursecodes.w5.entity.Student;
 import com.pxd.javacoursecodes.w5.service.SchoolService;
 import com.pxd.javacoursecodes.w5.service.StudentService;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @SpringBootTest
 class JavaCourseCodesApplicationTests {
 
-    @Autowired
+    @Resource
     private StudentService studentService;
 
-    @Autowired
+    @Resource
     private SchoolService schoolService;
+
+    @Resource
+    private DataService dataService;
 
     @Test
     public void testGetAllStudents(){
@@ -31,4 +35,17 @@ class JavaCourseCodesApplicationTests {
         List<School> allSchools = schoolService.selectAll();
     }
 
+    @Test
+    public void testGetSchoolName(){
+
+        String shoolName = dataService.getSchoolName();
+        System.out.println(shoolName);
+    }
+
+    @Test
+    public void testGetSchoolName2(){
+
+        String shoolName = schoolService.getSchoolName();
+        System.out.println(shoolName);
+    }
 }
