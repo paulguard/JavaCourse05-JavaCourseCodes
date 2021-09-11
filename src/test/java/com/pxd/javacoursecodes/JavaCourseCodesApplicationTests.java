@@ -1,6 +1,7 @@
 package com.pxd.javacoursecodes;
 
 import com.example.pxdstarter.service.DataService;
+import com.pxd.javacoursecodes.w5.entity.Clazz;
 import com.pxd.javacoursecodes.w5.entity.School;
 import com.pxd.javacoursecodes.w5.entity.Student;
 import com.pxd.javacoursecodes.w5.service.SchoolService;
@@ -47,5 +48,7 @@ class JavaCourseCodesApplicationTests {
 
         String shoolName = schoolService.getSchoolName();
         System.out.println(shoolName);
+
+        Clazz.builder().id(1L).name("222");
     }
 }
