@@ -7,6 +7,4 @@ import java.util.List;
 public interface SchoolService {
 
     List<School> selectAll();
-
-    String getSchoolName();
 }

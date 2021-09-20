@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pxd.javacoursecodes.w7.dao.SohMapper">
+
+    <insert id="addSingleSoh" parameterType="com.pxd.javacoursecodes.w7.entity.Soh">
+        insert into soh(creator_id,order_time,code,status,buyer_name,buyer_province,buyer_city,buyer_county,buyer_detail_addr)
+         values(1,now(),#{code},#{status},#{buyerName},#{buyerProvince},#{buyerCity},#{buyerCounty},#{buyerDetailAddr})
+    </insert>
+
+    <insert id="addSingleSohBatch" parameterType="java.util.List">
+        insert into soh(creator_id,order_time,code,status,buyer_name,buyer_province,buyer_city,buyer_county,buyer_detail_addr)
+         values
+         <foreach collection="list" item="item" index="index" separator=",">
+             (#{item.creatorId},now(),#{item.code},#{item.status},#{item.buyerName},#{item.buyerProvince},#{item.buyerCity},#{item.buyerCounty},#{item.buyerDetailAddr})
+         </foreach>
+    </insert>
+
+</mapper>
