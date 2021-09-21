@@ -10,13 +10,12 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.Ordered;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
 @Slf4j
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class DataSourceAspect implements Ordered {
 
     public DataSourceAspect() {

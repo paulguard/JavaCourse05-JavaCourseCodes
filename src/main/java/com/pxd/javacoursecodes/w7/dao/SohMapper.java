@@ -5,10 +5,12 @@ import com.pxd.javacoursecodes.w7.config.DataSourceNames;
 import com.pxd.javacoursecodes.w7.entity.Soh;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 public interface SohMapper {
 
     int addSingleSoh(Soh soh);

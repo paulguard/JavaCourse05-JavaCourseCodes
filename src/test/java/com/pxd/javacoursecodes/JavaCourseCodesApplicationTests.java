@@ -18,7 +18,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 @SpringBootTest
-@ComponentScan(value = "com.pxd.*")
+//@ComponentScan(value = "com.pxd.javacoursecodes.w7.*")
 class JavaCourseCodesApplicationTests {
 
     private int NUMER_PER_TIMES = 20000;
