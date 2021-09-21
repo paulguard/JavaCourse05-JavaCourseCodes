@@ -7,13 +7,23 @@ spring:
   application:
     name: pxd-test
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3326/db?serverTimezone=UTC&characterEncoding=utf-8
-    #password: 123456
-    username: root
-    dbcp2:
-      min-idle: 5
-      initial-size: 20
-      max-total: 100
-      max-wait-millis: 150
+    primary:
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3326/db?serverTimezone=UTC&characterEncoding=utf-8
+      username: root
+      dbcp2:
+        min-idle: 5
+        initial-size: 20
+        max-total: 100
+        max-wait-millis: 150
+    second:
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3316/db?serverTimezone=UTC&characterEncoding=utf-8
+      username: root
+      dbcp2:
+        min-idle: 5
+        initial-size: 20
+        max-total: 100
+        max-wait-millis: 150

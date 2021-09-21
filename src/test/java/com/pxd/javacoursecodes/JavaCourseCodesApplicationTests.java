@@ -6,6 +6,7 @@ import com.pxd.javacoursecodes.w5.service.SchoolService;
 import com.pxd.javacoursecodes.w5.service.StudentService;
 import com.pxd.javacoursecodes.w7.dao.SohMapper;
 import com.pxd.javacoursecodes.w7.entity.Soh;
+import com.pxd.javacoursecodes.w7.service.SohService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +18,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 @SpringBootTest
-@ComponentScan(value = "com.pxd.javacoursecodes.w7.*")
+@ComponentScan(value = "com.pxd.*")
 class JavaCourseCodesApplicationTests {
 
     private int NUMER_PER_TIMES = 20000;
@@ -30,6 +31,9 @@ class JavaCourseCodesApplicationTests {
 
     @Resource
     private SohMapper sohMapper;
+
+    @Resource
+    private SohService sohService;
 
     @Test
     public void testGetAllStudents(){
@@ -105,7 +109,7 @@ class JavaCourseCodesApplicationTests {
 
         long t1 = System.currentTimeMillis();
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 1; i++) {
             int rlt = insertBatch(i);
             System.out.println(rlt);
         }
@@ -141,6 +145,14 @@ class JavaCourseCodesApplicationTests {
         }
 
         return result;
+    }
+
+    @Test
+    public void testSelectReadOnly(){
+
+        Soh soh = sohService.getById(3938811L);
+        System.out.println(soh.getCode());
+
     }
 
     private int insert() {

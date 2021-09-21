@@ -15,4 +15,13 @@
          </foreach>
     </insert>
 
+    <select id="getById" resultType="com.pxd.javacoursecodes.w7.entity.Soh">
+        select *
+        from soh
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+
 </mapper>
