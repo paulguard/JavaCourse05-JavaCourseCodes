@@ -39,4 +39,6 @@ public class Soh extends BaseEntity {
 
     private Long version;
 
+    private Long userId;
+
 }

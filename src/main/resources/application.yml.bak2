@@ -1,0 +1,36 @@
+server:
+  port: 8001
+mybatis:
+  mapper-locations:
+    - classpath:com/pxd/javacoursecodes/w7/**/*Mapper.xml
+spring:
+  application:
+    name: pxd-test
+  shardingsphere:
+    datasource:
+      names: master,s1
+      master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3326/db?serverTimezone=UTC&characterEncoding=utf-8
+        username: root
+        dbcp2:
+          min-idle: 5
+          initial-size: 20
+          max-total: 100
+          max-wait-millis: 150
+      s1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3316/db?serverTimezone=UTC&characterEncoding=utf-8
+        username: root
+        dbcp2:
+          min-idle: 5
+          initial-size: 20
+          max-total: 100
+          max-wait-millis: 150
+    sharding:
+      master-slave-rules:
+        ds0:
+          master-data-source-name: master
+          slave-data-source-names: s1

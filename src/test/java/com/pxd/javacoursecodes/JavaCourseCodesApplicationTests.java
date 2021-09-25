@@ -13,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -90,8 +91,8 @@ class JavaCourseCodesApplicationTests {
 
         long t1 = System.currentTimeMillis();
 
-        for (int i = 0; i < 10000; i++) {
-            int rlt = insert();
+        for (int i = 0; i < 100; i++) {
+            int rlt = insert(i);
             System.out.println(rlt);
         }
 
@@ -120,12 +121,34 @@ class JavaCourseCodesApplicationTests {
 
     }
 
+    /**
+     * 顺序批量插入
+     */
+    @Test
+    public void deleteFromSharding() {
+
+        int i = sohMapper.deleteById(1L);
+        System.out.println(i);
+
+    }
+
+    @Test
+    public void getByIdSharding() {
+
+        Soh soh = sohMapper.getById(23L);
+        System.out.println(soh.getCode());
+
+    }
+
+
+
     private int insertBatch(int index) {
         List<Soh> totalList = new ArrayList<>();
         for (int i = index * NUMER_PER_TIMES; i < (index + 1 ) * NUMER_PER_TIMES; i++) {
 
             Soh soh = new Soh();
             soh.setCreatorId(1L);
+            soh.setCreateTime(new Date());
             soh.setCode("2021-9-20-"+System.currentTimeMillis()+ Math.random());
             soh.setStatus("222");
             soh.setBuyerName("buyerName");
@@ -133,6 +156,7 @@ class JavaCourseCodesApplicationTests {
             soh.setBuyerCity("杭州市");
             soh.setBuyerCounty("拱墅区");
             soh.setBuyerDetailAddr("贡院9幢406室");
+            soh.setUserId((long)(i%10));
 
             totalList.add(soh);
         }
@@ -155,10 +179,11 @@ class JavaCourseCodesApplicationTests {
 
     }
 
-    private int insert() {
+    private int insert(int i) {
 
         Soh soh = new Soh();
         soh.setCreatorId(1L);
+        soh.setCreateTime(new Date());
         soh.setCode("2021-9-20-"+System.currentTimeMillis()+ Math.random());
         soh.setStatus("222");
         soh.setBuyerName("buyerName");
@@ -166,6 +191,7 @@ class JavaCourseCodesApplicationTests {
         soh.setBuyerCity("杭州市");
         soh.setBuyerCounty("拱墅区");
         soh.setBuyerDetailAddr("贡院9幢406室");
+        soh.setUserId((long)(i%10));
 
         int result = 0;
         try {

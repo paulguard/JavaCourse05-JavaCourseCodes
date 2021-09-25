@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages = "com.pxd")
+@SpringBootApplication(scanBasePackages = "com.pxd")
 //@Import({DynamicDataSourceConfig.class})
 //@EnableAspectJAutoProxy
 public class JavaCourseCodesApplication {
