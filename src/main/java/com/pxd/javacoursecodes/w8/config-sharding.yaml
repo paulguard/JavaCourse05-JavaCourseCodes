@@ -120,7 +120,7 @@ rules:
    t_order_inline:
      type: INLINE
      props:
-       algorithm-expression: t_order_${id % 16}
+       algorithm-expression: soh_${id % 16}
  
  keyGenerators:
    snowflake:
