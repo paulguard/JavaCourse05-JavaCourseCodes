@@ -127,7 +127,7 @@ class JavaCourseCodesApplicationTests {
     @Test
     public void deleteFromSharding() {
 
-        int i = sohMapper.deleteById(1L);
+        int i = sohMapper.deleteById(649033619331330113L);
         System.out.println(i);
 
     }
@@ -135,8 +135,22 @@ class JavaCourseCodesApplicationTests {
     @Test
     public void getByIdSharding() {
 
-        Soh soh = sohMapper.getById(23L);
+        Soh soh = sohMapper.getById(649033619331330114L);
         System.out.println(soh.getCode());
+
+    }
+
+    @Test
+    public void updateBySharding() {
+
+        Soh soh = sohMapper.getById(649033619331330114L);
+        soh.setCode("1010101010110101099999");
+
+        sohMapper.updateCode(soh);
+
+        Soh rltSoh = sohMapper.getById(soh.getId());
+
+        System.out.println(rltSoh.getCode());
 
     }
 

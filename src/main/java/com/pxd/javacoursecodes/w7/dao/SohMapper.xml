@@ -30,4 +30,10 @@
         </where>
     </delete>
 
+    <update id="updateCode">
+        update soh
+        set code = #{code}
+        where id = #{id}
+    </update>
+
 </mapper>

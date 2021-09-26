@@ -18,4 +18,6 @@ public interface SohMapper {
     Soh getById(@Param("id") Long id);
 
     int deleteById(@Param("id") Long id);
+
+    int updateCode(Soh soh);
 }
