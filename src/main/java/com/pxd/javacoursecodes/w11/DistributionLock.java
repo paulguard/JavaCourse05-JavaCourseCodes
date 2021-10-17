@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
 
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class DistributionLock {
 
     @Resource
-    private StringRedisTemplate redisTemplate;
+    private RedisTemplate<String,String> redisTemplate;
 
     /**
      * 获取锁
