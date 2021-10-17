@@ -1,0 +1,2 @@
+{"id":"192.168.31.64.tm163276340456100001","wasCommitted":true,"participants":[{"uri":"192.168.31.64.tm1","state":"COMMITTING","expires":1632763415813,"resourceName":"businessDB"},{"uri":"192.168.31.64.tm2","state":"COMMITTING","expires":1632763415813,"resourceName":"systemDB"}]}
+{"id":"192.168.31.64.tm163276340456100001","wasCommitted":true,"participants":[{"uri":"192.168.31.64.tm1","state":"TERMINATED","expires":1632763416016,"resourceName":"businessDB"},{"uri":"192.168.31.64.tm2","state":"TERMINATED","expires":1632763416016,"resourceName":"systemDB"}]}

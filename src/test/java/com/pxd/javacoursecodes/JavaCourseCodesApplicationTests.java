@@ -9,7 +9,6 @@ import com.pxd.javacoursecodes.w7.entity.Soh;
 import com.pxd.javacoursecodes.w7.service.SohService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

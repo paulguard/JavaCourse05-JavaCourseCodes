@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
-@Repository
+//@Mapper
+//@Repository
 public interface SohMapper {
 
     int addSingleSoh(Soh soh);

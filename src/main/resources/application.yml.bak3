@@ -1,0 +1,18 @@
+server:
+  port: 8001
+mybatis:
+  mapper-locations:
+    - classpath:com/pxd/javacoursecodes/w7/**/*Mapper.xml
+spring:
+  application:
+    name: pxd-test
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/sharding_db?serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    dbcp2:
+      min-idle: 5
+      initial-size: 20
+      max-total: 100
+      max-wait-millis: 150
