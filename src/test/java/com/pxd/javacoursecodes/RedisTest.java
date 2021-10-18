@@ -1,12 +1,16 @@
 package com.pxd.javacoursecodes;
 
+import java.util.Objects;
+
 import javax.annotation.Resource;
 
 import com.pxd.javacoursecodes.w11.DistributionCounter;
 import com.pxd.javacoursecodes.w11.DistributionLock;
+import com.pxd.javacoursecodes.w11.RedisMsgPubSubListener;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import redis.clients.jedis.Jedis;
 
 /**
  * @author by 平向东
@@ -49,6 +53,38 @@ public class RedisTest {
         Long count = distributionCounter.count();
 
         System.out.println(count);
+    }
+
+    @Test
+    public void testSubscribe(){
+
+        Jedis jedis = null;
+        try {
+            jedis = new Jedis("127.0.0.1", 6379,0);
+            RedisMsgPubSubListener sp = new RedisMsgPubSubListener();
+            jedis.subscribe(sp,"tv","radio");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Objects.requireNonNull(jedis).disconnect();
+        }
+
+    }
+
+    @Test
+    public void testPublisher(){
+
+        Jedis jedis = null;
+        try {
+            jedis = new Jedis("127.0.0.1", 6379);
+            jedis.publish("tv","This is tv show!");
+            jedis.publish("radio","This is ap news on a radio");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Objects.requireNonNull(jedis).disconnect();
+        }
+
     }
 
 }
