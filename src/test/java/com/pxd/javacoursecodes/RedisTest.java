@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import com.pxd.javacoursecodes.w11.DistributionLock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 /**
  * @author by 平向东
@@ -16,11 +17,16 @@ public class RedisTest {
     @Resource
     private DistributionLock distributionLock;
 
+    @Resource
+    private RedisTemplate<String,String> redisTemplate;
+
     @Test
     public void test1(){
 
-        boolean lock = distributionLock.getLock("112233", 3000);
+        boolean lock = distributionLock.getLock("112233", 300000);
         System.out.println(lock);
+
+        System.out.println(redisTemplate.getClientList().get(0).get("112233"));
 
         distributionLock.releaseLock("112233");
 
