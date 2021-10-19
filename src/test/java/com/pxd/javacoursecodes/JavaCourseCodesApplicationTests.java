@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+import com.alibaba.fastjson.JSON;
+
 @SpringBootTest
 //@ComponentScan(value = "com.pxd.javacoursecodes.w7.*")
 class JavaCourseCodesApplicationTests {
@@ -206,13 +208,16 @@ class JavaCourseCodesApplicationTests {
         soh.setBuyerDetailAddr("贡院9幢406室");
         soh.setUserId((long)(i%10));
 
-        int result = 0;
-        try {
-            result = sohMapper.addSingleSoh(soh);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        String s = JSON.toJSONString(soh);
+        System.out.println(s);
 
-        return result;
+        //int result = 0;
+        //try {
+        //    result = sohMapper.addSingleSoh(soh);
+        //}catch (Exception e){
+        //    e.printStackTrace();
+        //}
+
+        return 0;
     }
 }
