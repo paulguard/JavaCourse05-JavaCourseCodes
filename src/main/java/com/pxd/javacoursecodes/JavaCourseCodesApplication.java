@@ -13,8 +13,8 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @SpringBootApplication(scanBasePackages = "com.pxd")
-//@Import({DynamicDataSourceConfig.class})
-//@EnableAspectJAutoProxy
+@Import({DynamicDataSourceConfig.class})
+@EnableAspectJAutoProxy
 public class JavaCourseCodesApplication {
 
     public static void main(String[] args) {
