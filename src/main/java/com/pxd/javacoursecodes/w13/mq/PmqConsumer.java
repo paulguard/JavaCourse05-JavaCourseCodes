@@ -22,6 +22,9 @@ public class PmqConsumer<T> {
     }
 
     public PmqMessage<T> poll(long timeout){
+        if (pmq == null) {
+            throw new RuntimeException("Topic doesn't exist");
+        }
         return pmq.poll(timeout);
     }
 }
