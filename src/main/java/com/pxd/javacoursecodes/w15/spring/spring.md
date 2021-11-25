@@ -1,0 +1,17 @@
+spring是工作中最常接触的框架，现在基本什么都离不开spring
+现在我们虽然已经转换成使用了springboot，但是底层依然是spring,只是使用了一些机制使我们可以少配置一些东西
+以后的springcloud也依然是在这个基础上搭建起来的。
+
+spring最核心的两个点，也是面试中常问的：IOC和AOP
+而工作中有时候需要解决的问题，则涉及到bean的生命周期。
+bean的生命周期其实在源码里可以找到
+1. 扫描bean的定义并生成BeanDefinition
+2. 根据beanDefinition创建bean
+3. 增强bean（使用各种扩展点）
+4. 使用bean
+5. 销毁bean
+
+AOP的核心其实是动态代理，也就是通过定义，让系统自动为我们在方法前后织入相应的逻辑。
+
+工作中使用的ORMapping是mybatis，之所以要用ORMapping是因为数据库表示非面向对象的，而java是面向对象的
+因此必须有个转换，把表转为对象，这样才比较容易处理
