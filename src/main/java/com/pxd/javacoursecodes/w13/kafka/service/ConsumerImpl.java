@@ -24,7 +24,7 @@ public class ConsumerImpl implements Consumer {
 
     private Properties properties;
     private KafkaConsumer<String, String> consumer;
-    private final String topic = "order-test1";
+    private final String topic = "test-topic-1";
     private Map<TopicPartition, OffsetAndMetadata> currentOffsets = new HashMap<>();
     private volatile boolean flag = true;
 
@@ -33,7 +33,7 @@ public class ConsumerImpl implements Consumer {
         //        properties.put("enable.auto.commit", false);
         //        properties.put("isolation.level", "read_committed");
         //        properties.put("auto.offset.reset", "latest");
-        properties.put("group.id", "java1-kimmking");
+        //properties.put("group.id", "java1-kimmking");
         properties.put("bootstrap.servers", "localhost:9092");
         properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
